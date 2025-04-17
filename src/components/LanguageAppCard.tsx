@@ -22,7 +22,7 @@ const LanguageAppCard: FC<LanguageAppCardProps> = ({
   className,
 }) => {
   return (
-    <Card className={`max-w-md w-full shadow-lg ${className}`}>
+    <Card className={`max-w-md w-full shadow-lg transition-all duration-300 hover:shadow-xl hover:translate-y-[-5px] ${className}`}>
       <CardHeader>
         <CardTitle className="text-2xl">{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
