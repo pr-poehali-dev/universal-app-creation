@@ -29,6 +29,7 @@ const Index = () => {
             link="https://www.duolingo.com/"
             buttonText="Перейти на Duolingo"
             className="bg-green-50/80 backdrop-blur-sm"
+            icon="duo"
           />
           
           <LanguageAppCard 
@@ -44,6 +45,7 @@ const Index = () => {
             link="https://www.tandem.net/"
             buttonText="Перейти на Tandem"
             className="bg-blue-50/80 backdrop-blur-sm"
+            icon="chat"
           />
         </div>
         
