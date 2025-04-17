@@ -49,6 +49,11 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Добавляем цвета для зеленого маскота Duo */
+    --duo-primary: 132 98% 41%;
+    --duo-secondary: 132 95% 33%;
+    --duo-beak: 47 100% 50%;
   }
 
   .dark {
@@ -87,6 +92,11 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Цвета маскота Duo для темной темы */
+    --duo-primary: 132 95% 36%;
+    --duo-secondary: 132 90% 28%;
+    --duo-beak: 47 95% 45%;
   }
 }
 
@@ -98,4 +108,47 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Анимации для фоновых элементов */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(var(--rotation, 0deg)); }
+  50% { transform: translateY(-15px) rotate(var(--rotation, 0deg)); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-20px); }
+  60% { transform: translateY(-15px); }
+}
+
+@keyframes wobble {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.7; }
+}
+
+.float {
+  animation: float 10s ease-in-out infinite;
+}
+
+.bounce {
+  animation: bounce 6s ease-in-out infinite;
+}
+
+.wobble {
+  animation: wobble 8s ease-in-out infinite;
+}
+
+.pulse {
+  animation: pulse 5s ease-in-out infinite;
+}
+
+/* Градиентный фон */
+.bg-gradient-radial {
+  background-image: radial-gradient(circle, var(--tw-gradient-stops));
 }
