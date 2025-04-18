@@ -7,7 +7,8 @@ import { FC } from "react";
  */
 const AnimationStyles: FC = () => {
   return (
-    <style jsx>{`
+    <style dangerouslySetInnerHTML={{
+      __html: `
       @keyframes float {
         0%, 100% { transform: translateY(0) rotate(var(--rotation, 0deg)); }
         50% { transform: translateY(-15px) rotate(var(--rotation, 0deg)); }
@@ -37,7 +38,7 @@ const AnimationStyles: FC = () => {
       .pulse {
         animation: pulse 5s ease-in-out infinite;
       }
-    `}</style>
+    `}} />
   );
 };
 

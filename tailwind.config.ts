@@ -6,7 +6,7 @@ const config = {
   darkMode: ["class"],
   content: [
     "./index.html",
-    "./src/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}"
   ],
   theme: {
     container: {

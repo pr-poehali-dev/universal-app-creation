@@ -21,11 +21,13 @@ const CountryFlag: FC<{ flag: FlagProps }> = ({ flag }) => {
   const style: React.CSSProperties = {
     animation: flag.animation,
     '--rotation': flag.rotate,
-    top: flag.top,
-    left: flag.left,
-    right: flag.right,
-    bottom: flag.bottom,
   } as React.CSSProperties;
+
+  // Добавляем позиционирование только если оно задано
+  if (flag.top) style.top = flag.top;
+  if (flag.left) style.left = flag.left;
+  if (flag.right) style.right = flag.right;
+  if (flag.bottom) style.bottom = flag.bottom;
 
   return (
     <div
@@ -48,7 +50,7 @@ const renderFlagSvg = (countryCode: string) => {
           <rect width="60" height="30" fill="#B22234"/>
           <g fill="#FFFFFF">
             {[...Array(7)].map((_, i) => (
-              <rect key={i} y={i * 4.3 + 2.3} width="60" height="2.3" />
+              <rect key={i} y={(i * 4.3 + 2.3).toString()} width="60" height="2.3" />
             ))}
           </g>
           <rect width="25.2" height="16.1" fill="#3C3B6E"/>
